@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHartJS</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <style>
+        .meu-grafico{
+            width: 60%;
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body style="background-color:rgb(114, 114, 114);">
+    <div class="meu-grafico">
+        <canvas id="myChart"></canvas>
+    </div>
+    
+</body>
+</html>
+<script>
+     var ctx = document.getElementById('myChart');
+var meuGrafico = new Chart(ctx, {
+    
+    type: 'bar',
+
+    data: {
+        labels: ["Arco 1","Arco 2","Arco 3", "Arco 4"],
+        datasets: [
+        {
+            label: "One piece",
+            data: [180,200,350,405],
+            borderWidth: 10,
+            borderColor: 'none',
+            backgroundColor: 'Blue',
+        },
+        {
+            type: 'bar',
+            label: "Naruto",
+            data: [170,246,150,300],
+            borderWidth: 10,
+            borderColor: 'none',
+            backgroundColor: 'red'
+        },
+        
+        ]
+    },
+    
+    
+    options: {
+        
+        title: {
+            display: true,
+            fontSize: 30,
+            text: "Comparativo ep de animes",
+            position: 'top',
+        },
+        legend: {
+            display: true,
+            reverse: true,
+            position: 'right'
+        },
+        layout: {
+        padding: {
+            left: 50,
+            top: 50
+        },
+       
+    }
+    }
+})
+
+
+Chart.defaults.global.defaultFontColor = "White"; 
+</script>
